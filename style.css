@@ -3134,6 +3134,12 @@ p.containertext {
     display: block; 
     transition: opacity .2s ease 0;
   }
+
+  article.changeStyle-tabopen .column2design,
+  article.changeStyle-tabopen .column3design,
+  article.changeStyle-tabopen .column4design {
+    display: none;
+  }
   
   
   body > div + div .article1 {
