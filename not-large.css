@@ -1,0 +1,59 @@
+.item1,
+.item1a,
+.item1b{
+  font-size: 2.5em;
+}
+
+.item2,
+.item2a,
+.item2b{
+  font-size: 1.6vw;
+}
+
+.item3,
+.item3a,
+.item3b,
+.item3c{
+  font-size: 1em;
+}
+
+.item4,
+.item4a,
+.item4-new,
+.item4d{
+  font-size: 0.75em;
+}
+
+.wrapvids {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+  'chunky chunky'
+  'line1 line1'
+  'loveit diving'
+  'line2 line2'
+  'fosters mulling'
+  'line3 line3'
+  'kanye wilson'
+  'line4 line4'
+  'weng boosh'
+  'line5 line5'
+  'dyer keanu'
+  'line6 line6'
+  'lambs grime4'
+  'line7 line7'
+  
+}
+
+.vidline6,
+.vidline7 {
+  display: block;    
+}
+
+.vidtitle {
+  font-size: 1.1em;
+}
+
+.vidtext {
+  margin-right: 0.1em;
+  font-size: 0.7em;
+}

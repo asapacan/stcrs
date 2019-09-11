@@ -408,8 +408,6 @@ $(document).ready(function(){
   })
   
   $(document).mouseleave(function () {
-    return
-
     $(".article1").removeClass("changeStyle");
     $(".article1").removeClass("changeStyle1");
     $(".article2").removeClass("changeStyle");
@@ -506,4 +504,11 @@ $(document).ready(function(){
     cookieBanner.classList.toggle('show');
     docCookies.setItem("GDPR", "Accepted Cookie", maxAgeToGMT);
   });
+});
+
+// iOS scroll reset
+$(function(){
+  $('.iconsmob').click(function(){
+    $('body').scrollTop(0)
+  })
 });

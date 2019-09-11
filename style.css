@@ -178,6 +178,7 @@ article {
 article.changeStyle,
 article.changeStyle3 {
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .article4 {
@@ -665,8 +666,11 @@ p.quote{
   font-size: 1.3vw;
   letter-spacing: 2vw;
   z-index:1;
-  
 } 
+
+.icons :any-link {
+  text-decoration: none;
+}
 
 .iconschange {
   color: #181813;;
@@ -1107,6 +1111,8 @@ ul {
   grid-template-columns: repeat(10, 1fr);
   grid-auto-rows: auto;
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   padding-top: 0.5em;
   padding-bottom: 0.2em;
   grid-template-areas: 
@@ -2170,7 +2176,6 @@ ul {
   display: none;
 }
 
-
 .appear {
   opacity: 1;
   font-size: 1.275vw;
@@ -2320,7 +2325,6 @@ p.containertext {
 
 
 @media (max-width: 1500px) {
-  
   .item1,
   .item1a,
   .item1b{
@@ -2395,8 +2399,7 @@ p.containertext {
 @media (max-width: 1300px) {
   .button5:hover .order2{
     font-size: 1.05vw;
-  }
-  
+  }  
   
   .cokontent {
     font-size: 0.9em;
@@ -2607,10 +2610,11 @@ p.containertext {
     z-index:1;
     font-size: 4.5vw;
     opacity: 0;
-  } 
+  }
   
   .tableticons a {
     color: #181813;
+    text-decoration: none;
   }
   
   .burg {
@@ -2842,9 +2846,9 @@ p.containertext {
     padding: 0.4em;
   }
   
-  .disappear {
+  /* .disappear {
     opacity: 0;
-  }
+  } */
   
   .article1move {
     padding-top: 5vh;
@@ -2931,9 +2935,6 @@ p.containertext {
     font-size: 0.8em;
     color: #f9b233;
   }
-  
-  
-  
   
   .clientitem {
     width: 25%;
@@ -3076,7 +3077,7 @@ p.containertext {
   
   .article2{
     width: 7%;
-    background:#f9b233;
+    /* background:#f9b233; */
   }
   
   .article3{
@@ -3108,8 +3109,7 @@ p.containertext {
   .hide-tablet-title-designs{
     display: none;
   }
-  
-  
+/*   
   article > h2.black,  
   article > .column2design,
   article > .column3design,
@@ -3124,6 +3124,15 @@ p.containertext {
   article:hover > .column4design {
     display: none; 
     transition: opacity .2s ease .1s;
+  } 
+*/
+  
+  article:hover > h2.black,  
+  article:hover > .column2design,
+  article:hover > .column3design,
+  article:hover > .column4design {
+    display: block; 
+    transition: opacity .2s ease 0;
   }
   
   
@@ -3472,7 +3481,6 @@ p.containertext {
     article > div {
       opacity: 1; 
       transition: opacity .2s ease 0;
-      overflow-y: auto;
     }
     article:hover > div {
       transition: opacity .3s ease .3s;
@@ -3652,5 +3660,43 @@ p.containertext {
   /* On smaller screens, decrease text size */
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
+  }
+}
+
+
+/* iOS smooth scroll */
+
+@media (max-width: 1000px) {
+  .license,
+  .licensemob,
+  .tableticons,
+  .iconsmob {
+    position: fixed;
+    box-sizing: border-box;
+  }
+  
+  body > div + div,
+  article {
+    overflow: visible;
+    height: auto;
+  }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  article:not(:first-child):after {
+    content: '';
+    display: block;
+    height: 80px;
+  }
+}
+
+@media (min-width: 1001px) {
+  article:first-child {
+    overflow-y: scroll;
   }
 }
