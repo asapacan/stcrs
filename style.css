@@ -159,6 +159,7 @@ body > div + div {
 }
 
 article {
+  transition: width .3s ease-in-out;
   border-right: 3px solid #181813;
   background:#dd0034;
   flex: initial; 
@@ -3149,6 +3150,12 @@ p.containertext {
   
   body > div + div article {
     align-content: center;
+  }
+
+  article:after {
+    content: '';
+    height: 4em;
+    display: block;
   }
   
   /* &:hover > h2 {opacity: 0; } */

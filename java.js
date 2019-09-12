@@ -508,20 +508,39 @@ $(document).ready(function(){
 
 // iOS scroll reset
 $(function(){
-  $('.iconsmob').click(function(){
-    $('body').scrollTop(0);
+  $('.iconsmob button').click(function(){
+    $('*').each(function(i, el){
+      el.scrollTop = 0;
+    });
   });
 });
 
 // iOS nested grid bug hack 
 $(function(){
-  $('.pizza').one('click', function(){
-    var max = $('.featurevid').width();
-  
-    $('.article3 .wrapper *').each(function(i, el){
-      if(el.clientWidth > max){
-        el.style.width = max + 'px';
-      };
+  var changed = [];
+
+
+  $('.pizza').on('click', sizeGuard);
+
+  $(window).on('resize', $.throttle(250, sizeGuard));
+
+  function sizeGuard(){
+    changed.forEach(function(el){
+      delete el.style.width;
     });
-  });
+
+    changed.length = 0;
+
+    requestAnimationFrame(function(){
+      var max = $('.featurevid').width();
+  
+      $('.article3 .wrapper *').each(function(i, el){
+        if(el.clientWidth > max){
+          changed.push(el);
+
+          el.style.width = max + 'px';
+        };
+      });
+    });
+  };
 });
