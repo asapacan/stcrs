@@ -509,6 +509,19 @@ $(document).ready(function(){
 // iOS scroll reset
 $(function(){
   $('.iconsmob').click(function(){
-    $('body').scrollTop(0)
-  })
+    $('body').scrollTop(0);
+  });
+});
+
+// iOS nested grid bug hack 
+$(function(){
+  $('.pizza').one('click', function(){
+    var max = $('.featurevid').width();
+  
+    $('.article3 .wrapper *').each(function(i, el){
+      if(el.clientWidth > max){
+        el.style.width = max + 'px';
+      };
+    });
+  });
 });
