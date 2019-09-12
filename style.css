@@ -3131,7 +3131,7 @@ p.containertext {
   article:hover > .column2design,
   article:hover > .column3design,
   article:hover > .column4design {
-    display: block; 
+    /* display: block;  */
     transition: opacity .2s ease 0;
   }
 
