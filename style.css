@@ -2244,7 +2244,7 @@ ul {
   height:0;
 }
 
-.article3 div div {
+.article3 div div div {
   overflow-y: hidden;
 }
 
@@ -2458,7 +2458,7 @@ p.containertext {
 
   .license {
     display: block !important;
-    position: absolute;
+    position: relative;
     width: 100%;
     transition: transform .3s ease-in-out;
     white-space: nowrap;
@@ -2466,14 +2466,33 @@ p.containertext {
   
   .license + .license {
     left: 100%;
+    transform: translate(0, -100%);
+    margin-bottom: -4em;
   }
 
   article:hover .license {
     transform: translate(-100%, 0);
   }
 
+  article:hover .license + .license {
+    transform: translate(-100%, -100%);
+    margin-bottom: -4em;
+  }
+
   article:first-child:hover .license {
     transform: translate(0, -100%);
+  }
+
+  article + article:hover {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article + article .wrapper {
+    overflow-y: scroll;
+    flex-grow: 1;
+    flex-shrink: 1;
+    scrollbar-width: none;
   }
 
   .hidestyle2{
