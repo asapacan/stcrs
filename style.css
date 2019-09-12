@@ -2452,6 +2452,30 @@ p.containertext {
 
 
 @media (min-width: 1001px) {
+  article {
+    position: relative;
+  }
+
+  .license {
+    display: block !important;
+    position: absolute;
+    width: 100%;
+    transition: transform .3s ease-in-out;
+    white-space: nowrap;
+  }
+  
+  .license + .license {
+    left: 100%;
+  }
+
+  article:hover .license {
+    transform: translate(-100%, 0);
+  }
+
+  article:first-child:hover .license {
+    transform: translate(0, -100%);
+  }
+
   .hidestyle2{
     opacity: 1; 
   }
@@ -2536,8 +2560,7 @@ p.containertext {
   /* When hovered over */
   .article1:hover {
     width: 25%;
-  }
-  
+  }  
   
   .article2:hover,
   .article3:hover,
